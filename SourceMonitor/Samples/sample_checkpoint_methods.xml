@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<sourcemonitor_metrics>
+  <project version="3.3">
+    <project_name>C Sharp Test Files</project_name>
+    <project_directory>C:\Projects\SM Test Files\C Sharp Test Files</project_directory>
+    <project_language>C#</project_language>
+    <checkpoints checkpoint_count="1">
+      <checkpoint checkpoint_name="Checkpoint19" checkpoint_date="2012-01-04" ignore_blank_lines="false" modified_complexity="false">
+        <files file_count="7">
+          <file file_name="Account.cs">
+            <method name="Account.Deposit(double amt)">
+              <complexity>2</complexity>
+              <statements>3</statements>
+              <maximum_depth>2</maximum_depth>
+              <calls>0</calls>
+            </method>
+            <method name="AccountTest.Main(string[] args)">
+              <complexity>1</complexity>
+              <statements>4</statements>
+              <maximum_depth>2</maximum_depth>
+              <calls>3</calls>
+            </method>
+            <method name="Account.Report()">
+              <complexity>1</complexity>
+              <statements>3</statements>
+              <maximum_depth>2</maximum_depth>
+              <calls>3</calls>
+            </method>
+            <method name="Account.Withdraw(double amt)">
+              <complexity>4</complexity>
+              <statements>6</statements>
+              <maximum_depth>3</maximum_depth>
+              <calls>0</calls>
+            </method>
+          </file>
+          <file file_name="ComplexCircle.cs">
+            <method name="Test.Main(string[] args)">
+              <complexity>1</complexity>
+              <statements>5</statements>
+              <maximum_depth>2</maximum_depth>
+              <calls>1</calls>
+            </method>
+          </file>
+          <file file_name="DataRelationExample.cs">
+            <method name="DataRelationExample.Main()">
+              <complexity>3</complexity>
+              <statements>14</statements>
+              <maximum_depth>4</maximum_depth>
+              <calls>8</calls>
+            </method>
+          </file>
+          <file file_name="GetFilesInfo.cs">
+            <method name="GetFileInfo.Main(string[] args)">
+              <complexity>13</complexity>
+              <statements>33</statements>
+              <maximum_depth>5</maximum_depth>
+              <calls>14</calls>
+            </method>
+          </file>
+          <file file_name="Invoke.cs">
+            <method name="Class1.Main()">
+              <complexity>3</complexity>
+              <statements>15</statements>
+              <maximum_depth>4</maximum_depth>
+              <calls>10</calls>
+            </method>
+          </file>
+          <file file_name="ReadBinary.cs">
+            <method name="BinaryDataReader.Main(string[] args)">
+              <complexity>4</complexity>
+              <statements>11</statements>
+              <maximum_depth>5</maximum_depth>
+              <calls>3</calls>
+            </method>
+          </file>
+          <file file_name="WriteBinary.cs">
+            <method name="BinaryDataWriter.Main(string[] args)">
+              <complexity>3</complexity>
+              <statements>8</statements>
+              <maximum_depth>4</maximum_depth>
+              <calls>2</calls>
+            </method>
+          </file>
+        </files>
+      </checkpoint>
+    </checkpoints>
+  </project>
+</sourcemonitor_metrics>

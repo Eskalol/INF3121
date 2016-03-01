@@ -1,0 +1,7 @@
+\\Mac\Dropbox\UiO\UiO 2016\PA1\Source Code Unzipped Modified\3. Minesweeper\Minesweeper-CS\Minesweeper-CS\bin\Debug\MinesweeperProject.exe
+\\Mac\Dropbox\UiO\UiO 2016\PA1\Source Code Unzipped Modified\3. Minesweeper\Minesweeper-CS\Minesweeper-CS\bin\Debug\MinesweeperProject.pdb
+\\Mac\Dropbox\UiO\UiO 2016\PA1\Source Code Unzipped Modified\3. Minesweeper\Minesweeper-CS\Minesweeper-CS\obj\x86\Debug\MinesweeperProject.csprojResolveAssemblyReference.cache
+\\Mac\Dropbox\UiO\UiO 2016\PA1\Source Code Unzipped Modified\3. Minesweeper\Minesweeper-CS\Minesweeper-CS\obj\x86\Debug\MinesweeperProject.exe
+\\Mac\Dropbox\UiO\UiO 2016\PA1\Source Code Unzipped Modified\3. Minesweeper\Minesweeper-CS\Minesweeper-CS\obj\x86\Debug\MinesweeperProject.pdb
+\\Mac\Dropbox\UiO\UiO 2016\PA1\Cristi PA1\3. Minesweeper\Minesweeper-CS\Minesweeper-CS\obj\x86\Debug\MinesweeperProject.exe
+\\Mac\Dropbox\UiO\UiO 2016\PA1\Cristi PA1\3. Minesweeper\Minesweeper-CS\Minesweeper-CS\obj\x86\Debug\MinesweeperProject.pdb

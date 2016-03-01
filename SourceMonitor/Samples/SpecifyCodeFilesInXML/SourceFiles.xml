@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SourceMonitorProject Name="SourceMonitor">
+	<Files>
+        <!-- paths relative to this xml file location -->
+        <File RelativePath=".\src\ArrayList.cs"/>
+        <File RelativePath=".\src\Form1.cs"/>
+        <File RelativePath=".\src\SampleTest.cs"/>
+        <File RelativePath=".\src\TestEquals.cs"/>
+	</Files>
+</SourceMonitorProject>

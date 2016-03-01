@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sourcemonitor_commands">
+	<command>
+        <!-- path is relative to this command file -->
+        <project_file>.\SampleFromScript.smproj</project_file>
+        <project_language>C#</project_language>
+        <source_files_from_xml>
+            <!-- path is relative to this command file -->
+            <xml_base_directory>.\</xml_base_directory>
+            <xml_search_file>
+                <!-- path is relative to this command file -->
+                <xml_file_path>.\SourceFiles.xml</xml_file_path>
+                <xpath_location>File@RelativePath</xpath_location>
+            </xml_search_file>
+        </source_files_from_xml>
+	</command>
+</sourcemonitor_commands>
