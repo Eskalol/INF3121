@@ -64,7 +64,7 @@ public class generirane {
 		}
 
 		// Check if we have escaped the maze
-		if(row == 6 || col == 6 || row == 0 || col == 0){
+		if(isAtEdge(row, col)){
 			return true;
 		}
 
@@ -155,5 +155,12 @@ public class generirane {
 		maze[newRow][newColumn] = previousCell;
 		System.out.println();
 		printMaze();
+	}
+
+	/**
+	 * Check if a position is at the edge of the labyrinth
+     */
+	public boolean isAtEdge(int row, int column) {
+		return row == 6 || column == 6 || row == 0 || column == 0;
 	}
 }

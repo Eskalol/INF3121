@@ -12,8 +12,7 @@ public class Game {
 
 			// Take commands till the player has solved the maze
 			labyrinth.initializeMaze();
-			while((labyrinth.playersCurrentColumn!=0)&&(labyrinth.playersCurrentColumn!=6)
-					&&(labyrinth.playersCurrentRow!=0)&&(labyrinth.playersCurrentRow!=6)){
+			while (!labyrinth.isAtEdge(labyrinth.playersCurrentRow, labyrinth.playersCurrentColumn)) {
 				labyrinth.inputCommand();
 			}
 			System.out.println();
