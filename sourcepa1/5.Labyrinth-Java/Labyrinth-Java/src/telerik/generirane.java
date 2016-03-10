@@ -14,7 +14,9 @@ public class generirane {
 	public int playersMovesCount = 0;
 	HighScoreBoard board;
 	
-
+	/**
+	 * initialize maze
+	 */
 	void initializeMaze(){
 		Random randomgenerator = new Random();	
 		// Generates a new maze until at least one solution is found
@@ -38,7 +40,11 @@ public class generirane {
 		
 		maze[playersCurrentRow][playersCurrentColumn] = '*';
 		printMaze();
-	}	
+	}
+
+	/**
+	 * initialize score board
+	 */
 	public void initializeScoreBoard(){
 		board = new HighScoreBoard();
 	}
@@ -62,6 +68,10 @@ public class generirane {
 		// go into adjacent directions
 		return isSolvable(row-1, col) || isSolvable(row+1, col) || isSolvable(row, col-1) || isSolvable(row, col+1);
 	}
+
+	/**
+	 * print the maze
+	 */
 	void printMaze(){
 		for(int row = 0; row < 7; row++){
 			for(int column = 0; column < 7; column++){
@@ -69,7 +79,11 @@ public class generirane {
 			}
 			System.out.println();
 		}
-	}	
+	}
+
+	/**
+	 * command handling
+	 */
 	public void inputCommand(){
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("Enter your next move : L(left), " +
@@ -134,6 +148,9 @@ public class generirane {
 	}
 		
 	
+	/**
+	 * swap cells
+	 */
 	void swapCells(int currentRow, int newRow, int currentColumn, int newColumn){
 		char previousCell = maze[currentRow][currentColumn];
 		maze[currentRow][currentColumn] = maze[newRow][newColumn];
