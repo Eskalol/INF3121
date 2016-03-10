@@ -114,20 +114,12 @@ public class generirane {
 	 * check letter for direction to go to
 	 */
 	public  void movePlayer(char firstLetter){
-		if (firstLetter == 'L' || firstLetter == 'l') {
-			movePlayerTo(0, -1);
-		}
-		else if (firstLetter == 'R' || firstLetter == 'r') {
-			movePlayerTo(0, 1);
-		}
-		else if (firstLetter == 'U' || firstLetter == 'u') {
-			movePlayerTo(-1, 0);
-		}
-		else if (firstLetter == 'D' || firstLetter == 'd') {
-			movePlayerTo(1, 0);
-		}
-		else {
-			System.out.println("Invalid command!");
+		switch(Character.toUpperCase(firstLetter)) {
+			case 'L': movePlayerTo(0, -1); break;
+			case 'R': movePlayerTo(0, 1); break;
+			case 'U': movePlayerTo(-1, 0); break;
+			case 'D': movePlayerTo(1, 0); break;
+			default: System.out.println("Invalid command!");
 		}
 	}
 
