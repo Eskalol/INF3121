@@ -11,9 +11,7 @@ public class HighScoreBoard {
 	}
 
 	/**
-	 * Tries to add the player to the chart, starting with first place
-	 * @param player: the player to be added
-	 * @return wheter the player was added
+	 * Try to add a player to the chart, starting with first place
      */
 	private boolean addPlayerFromTop(Player player) {
 		for (int index = 0; index < list.size(); index++) {

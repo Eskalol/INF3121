@@ -3,8 +3,6 @@ package telerik;
 import java.util.Random;
 import java.util.Scanner;
 
-
-
 public class generirane {
 	public boolean isVisited[][] = new boolean[7][7];
 	public char maze[][] = new char[7][7];
@@ -13,8 +11,11 @@ public class generirane {
 	public String command;
 	public int playersMovesCount = 0;
 	HighScoreBoard board;
-	
 
+
+	/**
+	 * Generate a new maze
+     */
 	private void generateMaze(Random randomgenerator) {
 		for(int row = 0; row < 7; row++){
 			for(int column = 0; column < 7; column++){
@@ -29,6 +30,9 @@ public class generirane {
 		}
 	}
 
+	/**
+	 * Initialize the maze
+	 */
 	void initializeMaze(){
 		Random randomgenerator = new Random();	
 
@@ -46,15 +50,15 @@ public class generirane {
 	}
 
 	/**
-	 * initialize score board
+	 * Initialize score board
 	 */
 	public void initializeScoreBoard(){
 		board = new HighScoreBoard();
 	}
 
 	/**
-	 * try to solve the maze by recursively go into all adjacent direction
-	 * until it has expunged all valid paths, if one of the paths reaches the edge, true is returned.
+	 * Try to solve the maze by recursively going into all the adjacent directions
+	 * until we have expunged all valid paths, if one of the paths reaches the edge, true is returned.
 	 *
 	 */
 	public boolean isSolvable(int row, int col){
@@ -76,7 +80,7 @@ public class generirane {
 	}
 
 	/**
-	 * print the maze
+	 * Print the maze
 	 */
 	void printMaze(){
 		for(int row = 0; row < 7; row++){
@@ -88,7 +92,7 @@ public class generirane {
 	}
 
 	/**
-	 * command handling
+	 * Take input from the user and handle it
 	 */
 	public void inputCommand(){
 		Scanner scanner = new Scanner(System.in);
@@ -112,7 +116,7 @@ public class generirane {
 	}
 
 	/**
-	 * check letter for direction to go to
+	 * Try to move player according to the direction letter
 	 */
 	public  void movePlayer(char firstLetter){
 		switch(Character.toUpperCase(firstLetter)) {
@@ -125,7 +129,7 @@ public class generirane {
 	}
 
 	/**
-	 * move player to new position if possible.
+	 * Move player to new position if possible.
 	 */
 	void movePlayerTo(int row, int column) {
 		if(maze[playersCurrentRow + row][playersCurrentColumn + column] != 'X') {
@@ -142,7 +146,7 @@ public class generirane {
 		
 	
 	/**
-	 * swap cells
+	 * Swaps two cells in the maze
 	 */
 	void swapCells(int currentRow, int newRow, int currentColumn, int newColumn){
 		char previousCell = maze[currentRow][currentColumn];
