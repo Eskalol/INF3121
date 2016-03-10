@@ -20,10 +20,10 @@ public class generirane {
 		Random randomgenerator = new Random();	
 		// Generates a new maze until at least one solution is found
 		do{
-			for(int row=0; row<7; row++){
-				for(int column=0; column<7; column++){
-					isVisited[row][column]=false;
-					if(randomgenerator.nextInt(2)==1){
+			for(int row = 0; row < 7; row++){
+				for(int column = 0; column < 7; column++){
+					isVisited[row][column] = false;
+					if(randomgenerator.nextInt(2) == 1){
 						maze[row][column] = 'X';
 					}
 					else {
@@ -44,39 +44,39 @@ public class generirane {
 		board = new HighScoreBoard();
 	}	
 	public boolean isSolvable(int row, int col){
-		if(row==6 || col==6 || row==0 || col==0){
+		if(row == 6 || col == 6 || row == 0 || col == 0){
 			isExit = true;
 			return isExit;
 		}
-		if(maze[row-1][col]=='-'){
-			if((isVisited[row-1][col]==false)) {
+		if(maze[row-1][col] == '-'){
+			if(isVisited[row-1][col] == false) {
 				isVisited[row][col] = true;
 				isSolvable(row - 1, col);
 			}
 		}
-		if(maze[row+1][col]=='-'){
-			if((isVisited[row+1][col]==false)){
-				isVisited[row][col]=true;
+		if(maze[row+1][col] == '-'){
+			if((isVisited[row+1][col] == false)){
+				isVisited[row][col] = true;
 				isSolvable(row+1, col);
 			}
 		}
-		if(maze[row][col-1]=='-'){
-			if(isVisited[row][col-1]==false) {
+		if(maze[row][col-1] == '-'){
+			if(isVisited[row][col-1] == false) {
 				isVisited[row][col] = true;
 				isSolvable(row, col - 1);
 			}
 		}
-		if(maze[row][col+1]=='-'){
-			if(isVisited[row][col+1]==false) {
+		if(maze[row][col+1] == '-'){
+			if(isVisited[row][col+1] == false) {
 				isVisited[row][col] = true;
-				isSolvable(row, col + 1);
+				isSolvable(row, col+1);
 			}
 		}
 		return isExit;
 	}
 	void printMaze(){
-		for(int row=0; row<7; row++){
-			for(int column=0; column<7; column++){
+		for(int row = 0; row < 7; row++){
+			for(int column = 0; column < 7; column++){
 				System.out.print(maze[row][column]+" ");
 			}
 			System.out.println();
@@ -94,14 +94,14 @@ public class generirane {
                 initializeMaze();
             }
             else if(command.equals("top")){
-                if(board.list.size()>0){
+                if(board.list.size() > 0){
                     board.printBoard(board.list);
                 }
-                else{
+                else {
                     System.out.println("The High score board is empty!");
                 }
             }
-            else if(size>1){
+            else if(size > 1){
                 System.out.println("Invalid command!");
             }
             else {
@@ -111,53 +111,33 @@ public class generirane {
 			System.out.println("Good bye!");
 			System.exit(0);
 		}
-	}	
+	}
+
+
 	public  void movePlayer(char firstLetter){
-		if (firstLetter == 'L' || firstLetter == 'l') {
-			if (maze[playersCurrentRow][playersCurrentColumn - 1] != 'X') {
-				swapCells(playersCurrentRow, playersCurrentRow,
-					playersCurrentColumn, playersCurrentColumn - 1);
-				playersCurrentColumn--;
-				playersMovesCount++;
-					
-			} else {
-				System.out.println("Invalid move!");
-				printMaze();
-			}
-		} else if (firstLetter == 'R' || firstLetter == 'r') {
-			if (maze[playersCurrentRow][playersCurrentColumn + 1] != 'X') {
-				swapCells(playersCurrentRow, playersCurrentRow,
-						playersCurrentColumn, playersCurrentColumn + 1);
-				System.out.println();
-				printMaze();
-				playersCurrentColumn++;
-				playersMovesCount++;
-			} else {
-				System.out.println("Invalid move!");
-				printMaze();
-			}
-		} else if (firstLetter == 'U' || firstLetter == 'u') {
-			if (maze[playersCurrentRow - 1][playersCurrentColumn] != 'X') {
-				swapCells(playersCurrentRow, playersCurrentRow - 1,
-						playersCurrentColumn, playersCurrentColumn);
-				playersCurrentRow--;
-				playersMovesCount++;
-			} else {
-				System.out.println("Invalid move!");
-				printMaze();
-			}
-		} else if (firstLetter == 'D' || firstLetter == 'd') {
-			if (maze[playersCurrentRow + 1][playersCurrentColumn] != 'X') {
-				swapCells(playersCurrentRow, playersCurrentRow + 1,
-						playersCurrentColumn, playersCurrentColumn);
-				playersCurrentRow++;
-				playersMovesCount++;
-			} else {
-				System.out.println("Invalid move!");
-				printMaze();
-			}
-		} else {
+		if (firstLetter == 'L' || firstLetter == 'l')
+			movePlayerTo(0, -1);
+		else if (firstLetter == 'R' || firstLetter == 'r')
+			movePlayerTo(0, 1);
+		else if (firstLetter == 'U' || firstLetter == 'u')
+			movePlayerTo(-1, 0);
+		else if (firstLetter == 'D' || firstLetter == 'd')
+			movePlayerTo(1, 0);
+		else
 			System.out.println("Invalid command!");
+	}
+
+	
+	void movePlayerTo(int row, int column) {
+		if(maze[playersCurrentRow + row][playersCurrentColumn + column] != 'X') {
+			swapCells(playersCurrentRow, playersCurrentRow + row,
+				playersCurrentColumn, playersCurrentColumn + column);
+			playersCurrentRow += row;
+			playersCurrentColumn += column;
+			playersMovesCount++;
+		} else {
+			System.out.println("Invalid move!");
+			printMaze();
 		}
 	}
 		
