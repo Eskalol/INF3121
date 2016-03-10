@@ -103,12 +103,7 @@ public class generirane {
 		} else if(command.equals("restart")){
 			initializeMaze();
 		} else if(command.equals("top")){
-			if(board.list.size() > 0) {
-				board.printBoard(board.list);
-			}
-			else {
-				System.out.println("The High score board is empty!");
-			}
+			board.printBoard(board.list);
 		} else if(size > 1){
 			System.out.println("Invalid command!");
 		} else {
