@@ -135,13 +135,10 @@ public class generirane {
 		
 	
 	void swapCells(int currentRow, int newRow, int currentColumn, int newColumn){
-		boolean evaluate=true;//evaluate()
-		if(evaluate) {
-			char previousCell = maze[currentRow][currentColumn];
-			maze[currentRow][currentColumn] = maze[newRow][newColumn];
-			maze[newRow][newColumn] = previousCell;
-			System.out.println();
-			printMaze();
-		}
+		char previousCell = maze[currentRow][currentColumn];
+		maze[currentRow][currentColumn] = maze[newRow][newColumn];
+		maze[newRow][newColumn] = previousCell;
+		System.out.println();
+		printMaze();
 	}
 }
