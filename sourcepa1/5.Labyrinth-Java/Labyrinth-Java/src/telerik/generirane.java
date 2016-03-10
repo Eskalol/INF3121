@@ -76,27 +76,23 @@ public class generirane {
 				"R(right), U(up), D(down) ");
 		command = scanner.next();
 		int size = command.length();
-		if (!command.equals("exit")) {
-			if(command.equals("restart")){
-                initializeMaze();
-            }
-            else if(command.equals("top")){
-                if(board.list.size() > 0){
-                    board.printBoard(board.list);
-                }
-                else {
-                    System.out.println("The High score board is empty!");
-                }
-            }
-            else if(size > 1){
-                System.out.println("Invalid command!");
-            }
-            else {
-                movePlayer(command.charAt(0));
-            }
-		} else {
+
+		if (command.equals("exit")) {
 			System.out.println("Good bye!");
 			System.exit(0);
+		} else if(command.equals("restart")){
+			initializeMaze();
+		} else if(command.equals("top")){
+			if(board.list.size() > 0) {
+				board.printBoard(board.list);
+			}
+			else {
+				System.out.println("The High score board is empty!");
+			}
+		} else if(size > 1){
+			System.out.println("Invalid command!");
+		} else {
+			movePlayer(command.charAt(0));
 		}
 	}
 
