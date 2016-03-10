@@ -31,7 +31,7 @@ public class generirane {
 				}
 			}
 		}
-		while(isSolvable(3, 3)==false);
+		while(!isSolvable(3, 3));
 		playersCurrentRow = 3;
 		playersCurrentColumn = 3;
 		
