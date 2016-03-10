@@ -14,30 +14,33 @@ public class generirane {
 	public int playersMovesCount = 0;
 	HighScoreBoard board;
 	
-	/**
-	 * initialize maze
-	 */
-	void initializeMaze(){
-		Random randomgenerator = new Random();	
-		// Generates a new maze until at least one solution is found
-		do{
-			for(int row = 0; row < 7; row++){
-				for(int column = 0; column < 7; column++){
-					isVisited[row][column] = false;
-					if(randomgenerator.nextInt(2) == 1){
-						maze[row][column] = 'X';
-					}
-					else {
-						maze[row][column] = '-';
-					}
+
+	private void generateMaze(Random randomgenerator) {
+		for(int row = 0; row < 7; row++){
+			for(int column = 0; column < 7; column++){
+				isVisited[row][column] = false;
+				if(randomgenerator.nextInt(2) == 1){
+					maze[row][column] = 'X';
+				}
+				else {
+					maze[row][column] = '-';
 				}
 			}
 		}
-		while(!isSolvable(3, 3));
+	}
+
+	void initializeMaze(){
+		Random randomgenerator = new Random();	
+
+		// Generates a new maze until at least one solution is found
+		generateMaze(randomgenerator);
+		while(!isSolvable(3, 3)) {
+			generateMaze(randomgenerator);
+		}
+
+		// Place player in the middle
 		playersCurrentRow = 3;
 		playersCurrentColumn = 3;
-		
-		
 		maze[playersCurrentRow][playersCurrentColumn] = '*';
 		printMaze();
 	}
