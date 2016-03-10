@@ -11,7 +11,6 @@ public class generirane {
 	public int playersCurrentRow;
 	public int playersCurrentColumn;
 	public String command;
-	public boolean isExit = false;
 	public int playersMovesCount = 0;
 	HighScoreBoard board;
 	
@@ -52,8 +51,7 @@ public class generirane {
 	public boolean isSolvable(int row, int col){
 		// Check if we have escaped the maze
 		if(row == 6 || col == 6 || row == 0 || col == 0){
-			isExit = true;
-			return isExit;
+			return true;
 		}
 		// Check if this is a valid position
 		if(maze[row][col] != '-' || isVisited[row][col]) {
@@ -80,7 +78,6 @@ public class generirane {
 		int size = command.length();
 		if (!command.equals("exit")) {
 			if(command.equals("restart")){
-                isExit = false;
                 initializeMaze();
             }
             else if(command.equals("top")){
