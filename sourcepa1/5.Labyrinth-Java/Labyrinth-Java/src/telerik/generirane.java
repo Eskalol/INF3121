@@ -42,37 +42,27 @@ public class generirane {
 	}	
 	public void initializeScoreBoard(){
 		board = new HighScoreBoard();
-	}	
+	}
+
+	/**
+	 * try to solve the maze by recursively go into all adjacent direction
+	 * until it has expunge all valid paths, if one of the paths reaches the edge, true is returned.
+	 *
+	 */
 	public boolean isSolvable(int row, int col){
+		// Check if we have escaped the maze
 		if(row == 6 || col == 6 || row == 0 || col == 0){
 			isExit = true;
 			return isExit;
 		}
-		if(maze[row-1][col] == '-'){
-			if(isVisited[row-1][col] == false) {
-				isVisited[row][col] = true;
-				isSolvable(row - 1, col);
-			}
+		// Check if this is a valid position
+		if(maze[row][col] != '-' || isVisited[row][col]) {
+			return false;
 		}
-		if(maze[row+1][col] == '-'){
-			if((isVisited[row+1][col] == false)){
-				isVisited[row][col] = true;
-				isSolvable(row+1, col);
-			}
-		}
-		if(maze[row][col-1] == '-'){
-			if(isVisited[row][col-1] == false) {
-				isVisited[row][col] = true;
-				isSolvable(row, col - 1);
-			}
-		}
-		if(maze[row][col+1] == '-'){
-			if(isVisited[row][col+1] == false) {
-				isVisited[row][col] = true;
-				isSolvable(row, col+1);
-			}
-		}
-		return isExit;
+		// Mark this position as visited
+		isVisited[row][col] = true;
+		// go into adjacent directions
+		return isSolvable(row-1, col) || isSolvable(row+1, col) || isSolvable(row, col-1) || isSolvable(row, col+1);
 	}
 	void printMaze(){
 		for(int row = 0; row < 7; row++){
@@ -127,7 +117,9 @@ public class generirane {
 			System.out.println("Invalid command!");
 	}
 
-	
+	/**
+	 * move player to new position if possible.
+	 */
 	void movePlayerTo(int row, int column) {
 		if(maze[playersCurrentRow + row][playersCurrentColumn + column] != 'X') {
 			swapCells(playersCurrentRow, playersCurrentRow + row,
