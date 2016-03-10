@@ -54,18 +54,18 @@ public class generirane {
 
 	/**
 	 * try to solve the maze by recursively go into all adjacent direction
-	 * until it has expunge all valid paths, if one of the paths reaches the edge, true is returned.
+	 * until it has expunged all valid paths, if one of the paths reaches the edge, true is returned.
 	 *
 	 */
 	public boolean isSolvable(int row, int col){
-		// Check if we have escaped the maze
-		if(row == 6 || col == 6 || row == 0 || col == 0){
-			return true;
-		}
-
 		// Check if this is a valid position
 		if(maze[row][col] != '-' || isVisited[row][col]) {
 			return false;
+		}
+
+		// Check if we have escaped the maze
+		if(row == 6 || col == 6 || row == 0 || col == 0){
+			return true;
 		}
 
 		// Mark this position as visited
