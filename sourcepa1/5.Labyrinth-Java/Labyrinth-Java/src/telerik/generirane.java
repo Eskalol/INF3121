@@ -62,12 +62,15 @@ public class generirane {
 		if(row == 6 || col == 6 || row == 0 || col == 0){
 			return true;
 		}
+
 		// Check if this is a valid position
 		if(maze[row][col] != '-' || isVisited[row][col]) {
 			return false;
 		}
+
 		// Mark this position as visited
 		isVisited[row][col] = true;
+
 		// go into adjacent directions
 		return isSolvable(row-1, col) || isSolvable(row+1, col) || isSolvable(row, col-1) || isSolvable(row, col+1);
 	}
