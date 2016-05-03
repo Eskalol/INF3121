@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://demo.avactis.com/" />
+<title>remove an item</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">remove an item</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/4.7.9/cart.php</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=td.del-goods-col &gt; a.del-goods</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h3 &gt; a</td>
+	<td>${product2_name}</td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>css=strong.shopping-total-price.price</td>
+	<td>cart_subtotal</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>javascript{Number(storedVars['cart_subtotal'].replace(/[$,]/g, ''))}</td>
+	<td>cart_subtotal</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>javascript{Number(storedVars['product2_price'])}</td>
+	<td>${cart_subtotal}</td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

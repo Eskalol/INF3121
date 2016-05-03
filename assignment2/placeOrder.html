@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://demo.avactis.com/" />
+<title>places an order</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">places an order</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/4.7.9/cart.php</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=div.form-group &gt; a.btn.btn-primary</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>name=billingInfo[Firstname]</td>
+	<td>${user_firstname}</td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>name=billingInfo[Lastname]</td>
+	<td>${user_lastname}</td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>name=billingInfo[Email]</td>
+	<td>${user_email}</td>
+</tr>
+<tr>
+	<td>verifySelectedValue</td>
+	<td>id=billing-info-input_country_select</td>
+	<td>223</td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>name=billingInfo[Postcode]</td>
+	<td>${user_zipcode}</td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>id=billing-info-input_state_menu_select</td>
+	<td>378</td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>name=billingInfo[City]</td>
+	<td>${user_city}</td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>name=billingInfo[Streetline1]</td>
+	<td>${user_street}</td>
+</tr>
+<tr>
+	<td>verifyValue</td>
+	<td>name=billingInfo[Phone]</td>
+	<td>${user_phone}</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>name=checkbox_shipping_same_as_billing</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='Continue Checkout']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>document.checkout_2.elements['shippingModuleAndMethod[method_code]'][1]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>document.checkout_2.elements['shippingModuleAndMethod[method_code]'][1]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//input[@value='Continue Checkout'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>//input[@value='Place Order']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//input[@value='Place Order']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>css=h1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h1</td>
+	<td>Thank you for your order!</td>
+</tr>
+
+</tbody></table>
+</body>
+</html>
