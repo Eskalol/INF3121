@@ -11,6 +11,51 @@
 <thead>
 <tr><td rowspan="1" colspan="3">3. increment an item</td></tr>
 </thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/4.7.9/cart.php</td>
+	<td></td>
+</tr>
+<tr>
+	<td>selectAndWait</td>
+	<td>name=quantity_in_cart[1]</td>
+	<td>label=2</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>${product2_price}</td>
+	<td>product2_oldprice</td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>//form[@id='Product_Quan']/table/tbody/tr[3]/td[5]/strong</td>
+	<td>product2_price</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>javascript{Number(storedVars['product2_price'].replace(/[$,]/g, ''))}</td>
+	<td>product2_price</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>javascript{Number(storedVars['product2_oldprice']) * 2}</td>
+	<td>${product2_price}</td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>css=strong.shopping-total-price.price</td>
+	<td>cart_subtotal</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>javascript{Number(storedVars['cart_subtotal'].replace(/[$,]/g, ''))}</td>
+	<td>cart_subtotal</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>javascript{Number(storedVars['product1_price']) + Number(storedVars['product2_price'])}</td>
+	<td>${cart_subtotal}</td>
+</tr>
 
 </tbody></table>
 </body>
