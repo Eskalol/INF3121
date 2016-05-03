@@ -1,20 +1,117 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-<head>
-  <meta content="text/html; charset=UTF-8" http-equiv="content-type" />
-  <title>Test Suite</title>
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://demo.avactis.com/" />
+<title>2. add multiple items to cart</title>
 </head>
 <body>
-<table id="suiteTable" cellpadding="1" cellspacing="1" border="1" class="selenium"><tbody>
-<tr><td><b>Test Suite</b></td></tr>
-<tr><td><a href="setup.html">setup</a></td></tr>
-<tr><td><a href="createUser.html">create user</a></td></tr>
-<tr><td><a href="addMultipleItems.html">add multiple items to cart</a></td></tr>
-<tr><td><a href="removeItem.html">remove an item</a></td></tr>
-<tr><td><a href="placeOrder.html">places an order</a></td></tr>
-<tr><td><a href="logout.html">logout</a></td></tr>
-<tr><td><a href="signin.html">signin</a></td></tr>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">2. add multiple items to cart</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/4.7.9/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//a[2]/h3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>css=h1</td>
+	<td>product1_name</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='Add To Cart']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForVisible</td>
+	<td>link=View Cart</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=View Cart</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Continue Shopping</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//a[2]/h3</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>css=h1</td>
+	<td>product2_name</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//input[@value='Add To Cart']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=View Cart</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>css=h3 &gt; a</td>
+	<td>${product1_name}</td>
+</tr>
+<tr>
+	<td>verifyText</td>
+	<td>//form[@id='Product_Quan']/table/tbody/tr[3]/td[2]/h3/a</td>
+	<td>${product2_name}</td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>css=td.goods-page-total &gt; strong</td>
+	<td>product1_price</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>javascript{Number(storedVars['product1_price'].replace(/[$,]/g, ''))}</td>
+	<td>product1_price</td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>//form[@id='Product_Quan']/table/tbody/tr[3]/td[5]/strong</td>
+	<td>product2_price</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>javascript{Number(storedVars['product2_price'].replace(/[$,]/g, ''))}</td>
+	<td>product2_price</td>
+</tr>
+<tr>
+	<td>storeText</td>
+	<td>css=strong.shopping-total-price.price</td>
+	<td>cart_subtotal</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>javascript{Number(storedVars['cart_subtotal'].replace(/[$,]/g, ''))}</td>
+	<td>cart_subtotal</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>javascript{Number(storedVars['product1_price']) + Number(storedVars['product2_price'])}</td>
+	<td>${cart_subtotal}</td>
+</tr>
+
 </tbody></table>
 </body>
 </html>
